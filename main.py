@@ -7,14 +7,16 @@ app = Flask(__name__)
 def home():
     return "<h1>It works :D</h1>"
 
-@app.route("/badge/<id>")
-def get_badge(id):
-    url = f"https://us-central1-cssbattleapp.cloudfunctions.net/getRank?userId={id}"
+@app.route("/badge/")
+def get_badge():
+    idd = request.args.get("id")
+    url = f"https://us-central1-cssbattleapp.cloudfunctions.net/getRank?userId={idd}"
     response = requests.get(url)
     data = response.json()
+    data["id"] = response.json()
 
     data["score"] = round(data["score"], 2)
-    data["meanScore"] = round(float(data["score"]) / float(data["playedCount"]), 2)
+    # data["meanScore"] = round(float(data["score"]) / float(data["playedCount"]), 2)
 
     return render_template("badge.html", data=data)
 
