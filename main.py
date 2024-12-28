@@ -18,7 +18,7 @@ def get_badge():
     data["id"] = response.json()
 
     data["score"] = round(data["score"], 2)
-    data["name"] = username if username else "CSSBattle"
+    data["name"] = f"{username}'s CSSBattle.dev Stats" if username else "CSSBattle.dev Stats"
     # data["meanScore"] = round(float(data["score"]) / float(data["playedCount"]), 2)
 
     return flask.Response(
