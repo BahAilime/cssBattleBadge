@@ -1,12 +1,12 @@
 import requests
-from flask import Flask, request, redirect, url_for, render_template
+from flask import Flask, request, redirect, url_for, render_template, redirect
 import flask
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>It works :D</h1>"
+    return redirect("https://github.com/BahAilime/cssBattleBadge")
 
 @app.route("/badge/")
 def get_badge():
