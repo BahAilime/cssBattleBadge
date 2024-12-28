@@ -1,5 +1,6 @@
 import requests
 from flask import Flask, request, redirect, url_for, render_template
+import flask
 
 app = Flask(__name__)
 
@@ -20,6 +21,9 @@ def get_badge():
     data["name"] = username if username else "CSSBattle"
     # data["meanScore"] = round(float(data["score"]) / float(data["playedCount"]), 2)
 
-    return render_template("badge.html", data=data)
+    return flask.Response(
+        render_template("badge.html", data=data),
+        mimetype='image/svg+xml'
+    )
 
 # flask --app main.py run
