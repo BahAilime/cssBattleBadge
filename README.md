@@ -47,3 +47,25 @@ https://css-battle-badge.vercel.app/badge/?id=5tYbW8kVmGO2qbk0u14n1XLFWSU2&usern
 ## Deployment
 
 The app is deployed to [Vercel](https://vercel.com/).
+
+<!-- 
+## Star History
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="
+      https://api.star-history.com/svg?repos=BahAilime/cssBattleBadge&type=Date&theme=dark
+    "
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="
+      https://api.star-history.com/svg?repos=BahAilime/cssBattleBadge&type=Date
+    "
+  />
+  <img
+    alt="Star History Chart"
+    src="https://api.star-history.com/svg?repos=BahAilime/cssBattleBadge&type=Date"
+  />
+</picture> -->
