@@ -32,6 +32,11 @@ https://css-battle-badge.vercel.app/badge/?id=5tYbW8kVmGO2qbk0u14n1XLFWSU2&usern
 
 [![CSSBattle.dev](https://css-battle-badge.vercel.app/badge/?id=GFhoaJX4SFgdWOBXdWUee4jsaNq2&username=Emilia)](https://cssbattle.dev/player/ailime)
 
+## You can use this basic badge generator (at /badge/)
+
+[![Url generator](/static/generator.png)](https://css-battle-badge.vercel.app/badge/)
+[Badge Generator](https://css-battle-badge.vercel.app/badge/)
+
 ## Development
 
 1. Clone the repository.
