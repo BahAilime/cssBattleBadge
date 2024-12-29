@@ -8,11 +8,24 @@
 </head>
 
 <body>
-    <h1>No id ??? No id ????</h1>
+    <h1>You want to show your CSSBattle.dev stats to the ENTIRE WORLD ?</h1>
     <h2>Let me show you how it works</h2>
 
     <label for="userId">Put your ID here:</label>
     <input type="text" id="userId" name="userId" oninput="updateTextArea()" />
+
+    <button onclick="document.getElementById('modal').showModal()">How do I get my cssbattle ID ???</button>
+
+    <dialog id="modal">
+        <div class="modal-content">
+            <p>1. Go to your CSSBattle.dev profile.</p>
+            <p>2. Use the page source button from your browser or use the <code>Ctrl + U</code> shortcut.</p>
+            <p>3. Search for <code>data-userid=</code> in the page source.</p>
+            <p>4. Copy the value between the quotes.</p>
+            <button class="close" type="button" onclick="document.getElementById('modal').close()" style="width: 100%;">&times;</button>
+        </div>
+    </dialog>
+
     <label for="userId">Put your username here:</label>
     <input type="text" id="username" name="username" oninput="updateTextArea()" />
 
@@ -129,6 +142,26 @@
             outline: none;
             box-shadow: 0 0 5px rgba(70, 88, 112, 0.5);
         }
+
+        dialog#modal {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .modal-content {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.33);
+        }
+
     </style>
 </body>
 
