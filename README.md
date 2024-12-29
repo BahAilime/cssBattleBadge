@@ -12,13 +12,10 @@ https://css-battle-badge.vercel.app/badge/?id=5tYbW8kVmGO2qbk0u14n1XLFWSU2&usern
 
 ## How to get your id
 
-1. Go to [CSSBattle.dev](https://cssbattle.dev) and login.
-2. Open the Developer Tools (F12 or Ctrl + Shift + I).
-3. Go to the Network tab.
-4. Clear the requests list.
-5. Go back to your profile.
-6. Find the request to `https://us-central1-cssbattleapp.cloudfunctions.net/getRank?userId=...`.
-7. The `userId` parameter is your CSSBattle.dev user ID.
+1. Go on your CSSBattle.dev profile.
+2. Use the page source button from your browser or use the `Ctrl + U` shortcut.
+3. Search for `data-userid="` in the page source.
+4. Copy the value between the quotes.
 
 ## Example
 
