@@ -26,7 +26,7 @@ def get_badge():
 
     data["score"] = round(data["score"], 2)
     data["name"] = f"{username.capitalize()}'s CSSBattle.dev Stats" if username else "CSSBattle.dev Stats"
-    # data["meanScore"] = round(float(data["score"]) / float(data["playedCount"]), 2)
+    data["meanScore"] = f"{round(float(data["score"]) / (float(data["playedCount"]) if data["playedCount"] != 0 else 1), 2)} / 600"
 
     return flask.Response(
         render_template("badge.html", data=data),
