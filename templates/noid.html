@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>No id ??? No id ????</h1>
+    <h2>Let me show you how it works</h2>
+
+    <label for="userId">Put your ID here:</label>
+    <input type="text" id="userId" name="userId" oninput="updateTextArea()" />
+    <label for="userId">Put your username here:</label>
+    <input type="text" id="username" name="username" oninput="updateTextArea()" />
+
+    <label for="output">Put this in your profile's README.md and enjoy :D</label>
+    <textarea id="outputMd" name="output" rows="4" cols="50" readonly></textarea>
+    <label for="output">(or this)</label>
+    <textarea id="outputHtml" name="outputhtml" rows="4" cols="50" readonly></textarea>
+
+    <button onclick="loadPreview()">Load preview</button>
+
+    <div id="preview-container">
+
+    </div>
+    <script>
+        function updateTextArea() {
+            const userId = document.getElementById('userId').value;
+            const username = document.getElementById('username').value;
+            const outputMd = document.getElementById('outputMd');
+            const outputHtml = document.getElementById('outputHtml');
+            outputMd.value = `[![CSSBattle.dev](https://css-battle-badge.vercel.app/badge/?id=${userId}&username=${username})](https://cssbattle.dev/player/${username})`;
+            outputHtml.value = `<a href="https://cssbattle.dev/player/${username}" target="_blank"><img src="https://css-battle-badge.vercel.app/badge/?id=${userId}&username=${username}" height="250"/></a>`;
+        }
+
+        document.getElementById('outputMd').addEventListener('click', function () {
+            navigator.clipboard.writeText(this.value);
+
+            const originalValue = this.value;
+            this.value = 'Copied !';
+            setTimeout(function () {
+                this.value = originalValue;
+            }.bind(this), 1000);
+        });
+
+        document.getElementById('outputHtml').addEventListener('click', function () {
+            navigator.clipboard.writeText(this.value);
+
+            const originalValue = this.value;
+            this.value = 'Copied !';
+            setTimeout(function () {
+                this.value = originalValue;
+            }.bind(this), 1000);
+        });
+
+        function loadPreview() {
+            const previewContainer = document.getElementById('preview-container');
+            previewContainer.innerHTML = document.getElementById('outputHtml').value;
+        }
+
+
+        updateTextArea();
+
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 20px;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2 {
+            color: #465870;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #465870;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea[readonly] {
+            background-color: #eef2f7;
+            color: #465870;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #465870;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3b4e66;
+        }
+
+        button:active {
+            background-color: #324459;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #465870;
+            outline: none;
+            box-shadow: 0 0 5px rgba(70, 88, 112, 0.5);
+        }
+    </style>
+</body>
+
+</html>

@@ -12,13 +12,20 @@ def home():
 def get_badge():
     idd = request.args.get("id")
     username = request.args.get("username")
+
+    if idd is None:
+        if any("html" in str(mime) for mime in request.accept_mimetypes):
+            return render_template("noid.html")
+        elif any("image" in str(mime) for mime in request.accept_mimetypes):
+            return flask.send_from_directory('static', 'noid.png')
+
     url = f"https://us-central1-cssbattleapp.cloudfunctions.net/getRank?userId={idd}"
     response = requests.get(url)
     data = response.json()
     data["id"] = response.json()
 
     data["score"] = round(data["score"], 2)
-    data["name"] = f"{username}'s CSSBattle.dev Stats" if username else "CSSBattle.dev Stats"
+    data["name"] = f"{username.capitalize()}'s CSSBattle.dev Stats" if username else "CSSBattle.dev Stats"
     # data["meanScore"] = round(float(data["score"]) / float(data["playedCount"]), 2)
 
     return flask.Response(
