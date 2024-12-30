@@ -1,3 +1,5 @@
+import requests
+
 def fetch_user_data(user_id):
     """
     Fetches the user data for the given user_id from the CSSBattle.dev API.
@@ -27,4 +29,6 @@ def process_data(data, username):
     data["score"] = round(data["score"], 2)
     data["name"] = f"{username.capitalize()}'s CSSBattle.dev Stats" if username else "CSSBattle.dev Stats"
     data["meanScore"] = f"{round(float(data['score']) / (float(data['playedCount']) if data['playedCount'] != 0 else 1), 2)} / 600"
+    total = str(data["totalPlayers"])
+    data["totalPlayers"] = total[:3]+" "+total[3:] 
     return data

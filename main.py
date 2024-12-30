@@ -1,6 +1,7 @@
 import requests
 from flask import Flask, request, redirect, url_for, render_template, redirect
 import flask
+from utils import fetch_user_data, process_data
 
 app = Flask(__name__)
 
