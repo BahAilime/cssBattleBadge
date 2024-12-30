@@ -9,7 +9,7 @@
             margin: 5px;
         }
         rect {
-            stroke: {{ theme.border_color }};
+            stroke: {{ theme.border_color if theme.border_color else theme.text_color }};
             rx: 5px;
         }
     </style>
