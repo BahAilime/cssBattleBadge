@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 450 210" width="450" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 454 214" width="454" height="214">
     <style>
         * {
             font-family: 'Segoe UI', Ubuntu, Sans-Serif;
             font-weight: 600;
             margin: 0;
         }
-        svg {
+        <!-- svg {
             margin: 5px;
-        }
+        } -->
         rect {
             stroke: {{ theme.border_color if theme.border_color else theme.text_color }};
             rx: 5px;
@@ -15,7 +15,7 @@
     </style>
 
     <!-- Background -->
-    <rect width="450" height="200" fill="{{ theme.bg_color }}"/>
+    <rect width="450" height="210" x="2" y="2" fill="{{ theme.bg_color }}"/>
 
     <!-- Title -->
     <text x="35" y="40" font-family="Nunito, serif" font-size="24" fill="{{ theme.title_color }}">{{ data.name }}</text>
